@@ -16,7 +16,7 @@ import java.sql.*;
  */
 	public class createaccount extends JFrame implements ActionListener
 {
-		JLabel l1,l2,l3;
+		JLabel l1,l2,l3,l5,l4;
 		JButton b1,b2;
 		JTextField t1,t3;
 		JPasswordField p1;
@@ -26,25 +26,42 @@ import java.sql.*;
 	{
 		setTitle("Create An Account");
 		setLayout(null);
+
 		l1=new JLabel("Username");
 		l1.setBounds(100,100,100,50);
 		t1=new JTextField(20);
 		t1.setBounds(250,100,150,30);
+
 		l2=new JLabel("Password");
 		l2.setBounds(100,200,100,50);
 		p1=new JPasswordField(20);
+
         l3=new JLabel("Phone Number");
         l3.setBounds(100,300,100,50);
         t3=new JTextField(20);
         t3.setBounds(250,300,150,30);
         t3.addActionListener(this);
+
 		p1.setBounds(250,200,150,30);
 		b1=new JButton("Login");
 		b1.setBounds(200,400,100,50);
 		b1.addActionListener(this);
+
 		b2=new JButton("Create Account");
 		b2.setBounds(350,400,200,50);
 		b2.addActionListener(this);
+
+        l4=new JLabel("Hello User");
+        l4.setBounds(550,100,250,50);
+        Font f=new Font("aprajita",Font.BOLD|Font.ITALIC,50);
+        l4.setFont(f);
+        l4.setForeground(Color.red);
+
+        l5=new JLabel("Sign Up Here");
+        l5.setForeground(Color.black);
+        Font f1=new Font("system-ui",Font.ITALIC,20);
+
+        add(l4);
 		add(l1);
 		add(t1);
 		add(l2);

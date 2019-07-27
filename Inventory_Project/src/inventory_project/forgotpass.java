@@ -11,6 +11,7 @@ public class forgotpass extends JFrame implements ActionListener
     JTextField t;
     JPasswordField p;
     JButton b1,b2;
+    ImageIcon i;
 
     public forgotpass()
     {
@@ -45,18 +46,18 @@ public class forgotpass extends JFrame implements ActionListener
         p.addActionListener(this);
 
         b1=new JButton("Back To Login");
-        b1.setForeground(Color.red);
-        b1.setBackground(Color.yellow);
-        Font f4=new Font("courier new",Font.BOLD,18);
+        b1.setForeground(Color.black);
+        b1.setBackground(Color.green);
+        Font f4=new Font("Baskerville Old Face",Font.BOLD,18);
         b1.setFont(f4);
         b1.setBounds(420,420,200,50);
         b1.addActionListener(this);
 
         b2=new JButton("Change Password");
         b2.setBounds(680,420,200,50);
-        b2.setForeground(Color.red);
-        b2.setBackground(Color.yellow);
-        Font f5=new Font("courier new",Font.BOLD,18);
+        b2.setForeground(Color.black);
+        b2.setBackground(Color.green);
+        Font f5=new Font("Baskerville Old Face",Font.BOLD,18);
         b2.setFont(f5);
         b2.addActionListener(this);
 
@@ -104,12 +105,17 @@ public void actionPerformed(ActionEvent e)
             }
 
             int ctr=t.getText().length();
-            if(ctr<10||count==0)
+            if(ctr<10)
             {
                 JOptionPane.showMessageDialog(null,"The entered phone number is less than 10 digits");
                  t.setText("");
                 p.setText("");
-                JOptionPane.showMessageDialog(null,"User with entered Phone Number not found");
+             }
+            if(count==0)
+            {
+                 JOptionPane.showMessageDialog(null,"User with entered Phone Number not found");
+                 t.setText("");
+                 p.setText("");
             }
 
            
