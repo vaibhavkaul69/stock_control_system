@@ -33,18 +33,18 @@ public class login extends JFrame implements ActionListener,ItemListener
         l3.setForeground(Color.red);
         l3.setBounds(500,100,600,60);
 
-		l1=new JLabel("Username");
-		l1.setBounds(450,200,150,40);
+		l1=new JLabel("Username :");
+		l1.setBounds(470,200,150,40);
 		t1=new JTextField(20);
-		t1.setBounds(680,200,150,30);
-         Font f2=new Font("chiller",Font.BOLD|Font.ITALIC,30);
+		t1.setBounds(650,200,150,30);
+         Font f2=new Font(" system-ui",Font.BOLD|Font.ITALIC,20);
          l1.setFont(f2);
 
-		l2=new JLabel("Password");
-		l2.setBounds(450,280,150,40);
+		l2=new JLabel("Password :");
+		l2.setBounds(470,280,150,40);
 		p1=new JPasswordField(20);
-		p1.setBounds(680,280,150,30);
-         Font f3=new Font("chiller",Font.BOLD|Font.ITALIC,30);
+		p1.setBounds(650,280,150,30);
+         Font f3=new Font(" system-ui",Font.BOLD|Font.ITALIC,20);
          l2.setFont(f3);
         p1.addActionListener(this);
 
@@ -88,9 +88,11 @@ public class login extends JFrame implements ActionListener,ItemListener
     {
         if(i.getSource()==cb)
         {
-         stockentry stock=new stockentry();
-    stock.setSize(1366,768);
-    stock.setVisible(true);
+         forgotpass fp=new forgotpass();
+    fp.setSize(1366,768);
+    fp.setVisible(true);
+    fp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    dispose();
         }
     }
 
@@ -98,7 +100,7 @@ public class login extends JFrame implements ActionListener,ItemListener
 	{
 		String s=ae.getActionCommand();
 
-			if(s.equals("Login"))
+			if(s.equals("Login")||ae.getSource()==p1)
             {
                 try
                 {
@@ -144,6 +146,8 @@ public class login extends JFrame implements ActionListener,ItemListener
                  dispose();
                  
 			}
+
+
 
     
 }

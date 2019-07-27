@@ -161,6 +161,7 @@ public void actionPerformed(ActionEvent e)
         login o=new login();
 		o.setSize(1366,770);
 		o.setVisible(true);
+        dispose();
     }
 
 }
