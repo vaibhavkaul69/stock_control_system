@@ -1,7 +1,6 @@
 package inventory_project;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 
 class splashscreen extends JFrame
@@ -45,7 +44,7 @@ class splashscreen extends JFrame
         jSeparator1.setBounds(520, 380, 340, 10);
 
         JLabel l2 = new JLabel("");
-        l2.setIcon(new javax.swing.ImageIcon("D:\\javawork\\PROJECT\\stock_control_system\\Inventory_Project\\src\\inventory_project\\background.jpg")); // NOI18N
+        l2.setIcon(new javax.swing.ImageIcon("D:\\javawork\\PROJECT\\stock_control_system\\Inventory_Project\\src\\inventory_project\\splashscreen.gif")); // NOI18N
        l2.setText("jLabel1");
        l2.setPreferredSize(new java.awt.Dimension(500, 500));
         getContentPane().add(l2);

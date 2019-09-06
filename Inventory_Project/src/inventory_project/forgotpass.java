@@ -7,8 +7,9 @@ import java.sql.*;
 
 public class forgotpass extends JFrame implements ActionListener
 {
-    JLabel l1,l2,l3,l4;
+    JLabel l1,l2,l3,l4,l5;
     JTextField t;
+    JSeparator js;
     JPasswordField p;
     JButton b1,b2;
     ImageIcon i;
@@ -18,31 +19,36 @@ public class forgotpass extends JFrame implements ActionListener
         setTitle("Change Password");
                 setLayout(null);
         l1=new JLabel("Forgot Your Password?");
-        l1.setForeground(Color.red);
-        l1.setBounds(450,100,450,60);
-       Font f=new Font("aprajita",Font.BOLD|Font.ITALIC,40);
+        l1.setForeground(Color.green);
+        l1.setBounds(300,100,800,100);
+       Font f=new Font("Baskerville Old Face",Font.BOLD,70);
        l1.setFont(f);
 
-        l2=new JLabel("To reset your password enter the Phone Number associated with your account.");
-        Font f1=new Font(" system-ui",Font.ITALIC,18);
-       l2.setFont(f1);
-        l2.setBounds(360,180,650,50);
+       js=new JSeparator();
+       js.setBounds(530,210,250,50);
 
-        l3=new JLabel("Phone Number :");
+
+        l2=new JLabel("To reset your password enter the Email Address associated with your account.");
+        l2.setForeground(Color.black);
+        Font f1=new Font("aprajita",Font.BOLD,20);
+       l2.setFont(f1);
+        l2.setBounds(290,220,750,50);
+
+        l3=new JLabel("Email Address :");
         Font f2=new Font("system-ui",Font.ITALIC|Font.BOLD,20);
         l3.setFont(f2);
-        l3.setForeground(Color.black);
-        l3.setBounds(450,250,200,50);
+        l3.setForeground(Color.white);
+        l3.setBounds(450,300,200,50);
         t=new JTextField();
-        t.setBounds(700,260,150,30);
+        t.setBounds(650,310,150,30);
 
         l4=new JLabel("New Password :");
         Font f3=new Font("system-ui",Font.BOLD|Font.ITALIC,20);
         l4.setFont(f3);
-        l4.setForeground(Color.black);
-        l4.setBounds(450,330,200,50);
+        l4.setForeground(Color.white);
+        l4.setBounds(450,380,200,50);
         p=new JPasswordField();
-        p.setBounds(700,340,150,30);
+        p.setBounds(650,390,150,30);
         p.addActionListener(this);
 
         b1=new JButton("Back To Login");
@@ -50,21 +56,25 @@ public class forgotpass extends JFrame implements ActionListener
         b1.setBackground(Color.green);
         Font f4=new Font("Baskerville Old Face",Font.BOLD,18);
         b1.setFont(f4);
-        b1.setBounds(420,420,200,50);
+        b1.setBounds(400,480,200,50);
         b1.addActionListener(this);
 
         b2=new JButton("Change Password");
-        b2.setBounds(680,420,200,50);
+        b2.setBounds(650,480,200,50);
         b2.setForeground(Color.black);
         b2.setBackground(Color.green);
         Font f5=new Font("Baskerville Old Face",Font.BOLD,18);
         b2.setFont(f5);
         b2.addActionListener(this);
 
+        i=new ImageIcon("D:\\javawork\\PROJECT\\stock_control_system\\Inventory_Project\\src\\inventory_project\\forgotpass.jpg");
+        l5=new JLabel(i);
+        l5.setBounds(0,0,1366,768);
 
 
 
        add(l1);
+       add(js);
        add(l2);
        add(l3);
        add(l4);
@@ -72,6 +82,7 @@ public class forgotpass extends JFrame implements ActionListener
        add(p);
        add(b1);
        add(b2);
+       add(l5);
 
 
     }
@@ -96,24 +107,17 @@ public void actionPerformed(ActionEvent e)
             Class.forName("com.mysql.jdbc.Driver");
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost/inventorydb","root","123");
             Statement stmt=con.createStatement();
-            String query1="select * from user where phonenum='"+t.getText()+"'";
+            String query1="select * from user where email='"+t.getText()+"'";
             ResultSet rs=stmt.executeQuery(query1);
             int count=0;
             while(rs.next())
             {
                 count++;
             }
-
-            int ctr=t.getText().length();
-            if(ctr<10)
-            {
-                JOptionPane.showMessageDialog(null,"The entered phone number is less than 10 digits");
-                 t.setText("");
-                p.setText("");
-             }
+            
             if(count==0)
             {
-                 JOptionPane.showMessageDialog(null,"User with entered Phone Number not found");
+                 JOptionPane.showMessageDialog(null,"User with entered Email not found");
                  t.setText("");
                  p.setText("");
             }
@@ -121,7 +125,7 @@ public void actionPerformed(ActionEvent e)
            
             else
             {
-            String query="update user set password='"+p.getText()+"'where phonenum='"+t.getText()+"'";
+            String query="update user set password='"+p.getText()+"'where email='"+t.getText()+"'";
             int x=stmt.executeUpdate(query);
              p.setText("");
             t.setText("");

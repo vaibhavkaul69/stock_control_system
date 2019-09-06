@@ -43,24 +43,25 @@ public class welcome extends javax.swing.JFrame
         jLabel4 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator1 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Baskerville Old Face", 1, 100)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Baskerville Old Face", 1, 100));
         jLabel2.setForeground(new java.awt.Color(0, 255, 0));
         jLabel2.setText("STOCK");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(500, 190, 440, 90);
 
-        jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 1, 80)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 1, 80));
         jLabel3.setForeground(java.awt.Color.white);
         jLabel3.setText("MANAGEMENT");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(390, 300, 660, 80);
 
-        jLabel4.setFont(new java.awt.Font("Baskerville Old Face", 1, 100)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Baskerville Old Face", 1, 100));
         jLabel4.setForeground(new java.awt.Color(0, 255, 0));
         jLabel4.setText("SYSTEM");
         getContentPane().add(jLabel4);
@@ -68,9 +69,13 @@ public class welcome extends javax.swing.JFrame
         getContentPane().add(jSeparator2);
         jSeparator2.setBounds(480, 280, 420, 10);
 
-        jSeparator1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jSeparator1.setFont(new java.awt.Font("Tahoma", 1, 11));
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(520, 380, 340, 10);
+
+        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        getContentPane().add(jSeparator3);
+        jSeparator3.setBounds(590, 80, 310, 110);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("D:\\javawork\\PROJECT\\stock_control_system\\Inventory_Project\\src\\inventory_project\\background.jpg")); // NOI18N
         jLabel1.setText("jLabel1");
@@ -110,6 +115,7 @@ public class welcome extends javax.swing.JFrame
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     // End of variables declaration//GEN-END:variables
 
 }

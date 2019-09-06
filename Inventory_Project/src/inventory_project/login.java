@@ -20,6 +20,9 @@ public class login extends JFrame implements ActionListener,ItemListener
         JCheckBox cb;
 		JPasswordField p1;
         ImageIcon i;
+        JMenuBar mbr;
+        JMenu menu;
+        JMenuItem item1,item2,item3,item4,item5,item6;
 		
 
 
@@ -54,6 +57,7 @@ public class login extends JFrame implements ActionListener,ItemListener
 
         cb=new JCheckBox();
         cb.setBounds(700,360,20,20);
+        cb.setBackground(Color.green);
         lf=new JLabel("Forgot Your Password?");
         lf.setBounds(730,345,200,50);
         lf.setForeground(Color.white);
@@ -138,7 +142,9 @@ public class login extends JFrame implements ActionListener,ItemListener
                     {
                         JOptionPane.showMessageDialog(null,"User not found - Try Again");
                         t1.setText("");
+                        t1.requestFocus();
                         p1.setText("");
+                       
                     }
                     else
                     {
